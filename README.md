@@ -2,11 +2,6 @@
 
 **Sekai2** is a large-scale, real-world egocentric video dataset built for interactive world models. It pairs long-horizon footage of people moving through the world — walking, driving, cycling, flying, riding rail, boats and cable cars — with camera trajectories and structured, temporally grounded language.
 
-Kang He<sup>1,2,3</sup>, Wenshuo Peng<sup>4</sup>, Zihui Gao<sup>1</sup>, Jiaming Tan<sup>1</sup>, Kaipeng Zhang<sup>1,\*</sup>, Yongtao Ge<sup>1,\*</sup>
-
-<sup>1</sup> Alaya Lab · <sup>2</sup> Shanghai Innovation Institute · <sup>3</sup> Wuhan University · <sup>4</sup> Tsinghua University
-<sup>\*</sup> Corresponding authors
-
 🌐 **[Project page](https://kangverse.github.io/sekai2-project/)** · 📄 Technical report — *coming soon* · 🤗 Dataset — *coming soon*
 
 ---
