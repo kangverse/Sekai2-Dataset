@@ -98,7 +98,7 @@ This repository includes the same release utilities distributed with the
 Hugging Face dataset:
 
 ```text
-scripts/
+data_tools/
 ├── reconstruct_clips.py     # download sources and reconstruct exact clips
 ├── extract_annotations.py   # extract one paired pose/caption annotation
 └── requirements.txt
@@ -108,7 +108,7 @@ Install the Python dependencies and make sure `ffmpeg` and `ffprobe` are
 available on your system:
 
 ```bash
-pip install -r scripts/requirements.txt
+pip install -r data_tools/requirements.txt
 ```
 
 Reconstruct perspective clips from the public manifest. The example below
@@ -116,7 +116,7 @@ downloads source videos, reconstructs ten `sekai2` clips, and validates their
 resolution, frame rate, and exact frame count:
 
 ```bash
-python scripts/reconstruct_clips.py \
+python data_tools/reconstruct_clips.py \
   /path/to/Sekai2_Real_World/sekai2_clips.csv \
   --output-dir ./data/clips \
   --cache-dir ./data/source-cache \
@@ -132,7 +132,7 @@ After downloading the relevant annotation shard, extract the paired NPZ and
 JSON files for one clip:
 
 ```bash
-python scripts/extract_annotations.py \
+python data_tools/extract_annotations.py \
   /path/to/Sekai2_Real_World/sekai2_clips.csv \
   --repo-root /path/to/Sekai2_Real_World \
   --clip-id <clip_id> \
@@ -185,6 +185,8 @@ If you find Sekai2 useful in your research, please cite:
 ```
 
 ## License and responsible use
+
+**For academic research and non-commercial use only.**
 
 Please refer to the terms provided in the corresponding
 [Hugging Face](https://huggingface.co/datasets/Kangverse/Sekai2_Real_World)
