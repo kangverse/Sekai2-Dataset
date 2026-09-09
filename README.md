@@ -1,17 +1,21 @@
 # Sekai2: From World Exploration to Interactive World Modeling
 
-**Sekai2** is a large-scale, real-world egocentric video dataset built for
-interactive world models. It pairs long-horizon footage of people moving
-through the world—walking, driving, cycling, flying, riding rail, boats, and
-cable cars—with camera trajectories and structured, temporally grounded
-language.
+<p align="center">
+  <a href="https://kangverse.github.io/sekai2-project/"><img src="https://img.shields.io/badge/Project-Page-blue"></a>
+  <a href="https://arxiv.org/abs/2608.09449"><img src="https://img.shields.io/badge/Paper-arXiv-red?logo=arxiv&logoColor=white"></a>
+  <a href="https://huggingface.co/datasets/Kangverse/Sekai2_Real_World"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Sekai2__Real__World-HuggingFace-yellow"></a>
+  <a href="https://www.modelscope.ai/datasets/kangverse/Sekai2_Panoramics/files"><img src="https://img.shields.io/badge/Panoramic%20Data-ModelScope-orange"></a>
+</p>
 
 <p align="center">
-  🌐 <a href="https://kangverse.github.io/sekai2-project/">Project Page</a> ·
-  📄 <a href="https://arxiv.org/abs/2608.09449">Paper</a> ·
-  🤗 <a href="https://huggingface.co/datasets/Kangverse/Sekai2_Real_World">Perspective Data & Annotations</a> ·
-  🎥 <a href="https://www.modelscope.ai/datasets/kangverse/Sekai2_Panoramics/files">Panoramic Data</a>
+  <img src="assets/sekai2_teaser_wheel.png" width="100%">
 </p>
+
+> A large-scale, real-world egocentric video dataset for interactive world
+> modeling, pairing long-horizon footage across diverse modes of movement with
+> camera trajectories and structured, temporally grounded language.
+
+---
 
 ## 📰 News
 
@@ -87,6 +91,53 @@ The self-captured **20-hour 360° panoramic subset** is hosted as full videos at
 [kangverse/Sekai2_Panoramics on ModelScope](https://www.modelscope.ai/datasets/kangverse/Sekai2_Panoramics/files).
 These videos are distributed directly and do not use the URL/timestamp
 reconstruction procedure above.
+
+## Utilities
+
+This repository includes the same release utilities distributed with the
+Hugging Face dataset:
+
+```text
+scripts/
+├── reconstruct_clips.py     # download sources and reconstruct exact clips
+├── extract_annotations.py   # extract one paired pose/caption annotation
+└── requirements.txt
+```
+
+Install the Python dependencies and make sure `ffmpeg` and `ffprobe` are
+available on your system:
+
+```bash
+pip install -r scripts/requirements.txt
+```
+
+Reconstruct perspective clips from the public manifest. The example below
+downloads source videos, reconstructs ten `sekai2` clips, and validates their
+resolution, frame rate, and exact frame count:
+
+```bash
+python scripts/reconstruct_clips.py \
+  /path/to/Sekai2_Real_World/sekai2_clips.csv \
+  --output-dir ./data/clips \
+  --cache-dir ./data/source-cache \
+  --dataset sekai2 \
+  --limit 10
+```
+
+Use one or more `--clip-id <clip_id>` arguments instead of `--limit` to select
+specific clips. Add `--remove-source` if cached source videos should be deleted
+after all selected clips from that source have been reconstructed.
+
+After downloading the relevant annotation shard, extract the paired NPZ and
+JSON files for one clip:
+
+```bash
+python scripts/extract_annotations.py \
+  /path/to/Sekai2_Real_World/sekai2_clips.csv \
+  --repo-root /path/to/Sekai2_Real_World \
+  --clip-id <clip_id> \
+  --output-dir ./data/annotations
+```
 
 ## Annotation format
 
