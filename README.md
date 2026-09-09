@@ -22,7 +22,7 @@
 - **[2026-09-09] Sekai2 data released!** The metadata and paired camera-pose/caption annotations for **127,884 perspective clips** are now available on [🤗 Hugging Face](https://huggingface.co/datasets/Kangverse/Sekai2_Real_World), and a **20-hour 360° panoramic subset (173 videos)** is available on [ModelScope](https://www.modelscope.ai/datasets/kangverse/Sekai2_Panoramics/files). The new v2 perspective pose release includes camera intrinsics and camera-to-world transforms.
 - **[2026-08-14] Sekai2 technical report released.** Read the paper on [arXiv](https://arxiv.org/abs/2608.09449) and visit the [project page](https://kangverse.github.io/sekai2-project/).
 
-## The dataset at a glance
+## 📊 The dataset at a glance
 
 The complete dataset described in the paper contains:
 
@@ -54,7 +54,7 @@ Each clip is accompanied by:
 - **Controlled attributes**—country, camera motion, lighting, time of day,
   weather, and scene type.
 
-## Download
+## 📥 Download
 
 ### Perspective data and annotations
 
@@ -92,7 +92,7 @@ The self-captured **20-hour 360° panoramic subset** is hosted as full videos at
 These videos are distributed directly and do not use the URL/timestamp
 reconstruction procedure above.
 
-## Utilities
+## 🛠️ Utilities
 
 This repository includes the same release utilities distributed with the
 Hugging Face dataset:
@@ -139,7 +139,7 @@ python data_tools/extract_annotations.py \
   --output-dir ./data/annotations
 ```
 
-## Annotation format
+## 🗂️ Annotation format
 
 Each perspective annotation shard is a tar archive containing paired files:
 
@@ -170,7 +170,7 @@ The previous `annotations/` tree remains available for compatibility. For new
 projects, use `annotations-v2/` together with the root CSV manifests and
 `metadata/v2/`.
 
-## Citation
+## 📝 Citation
 
 If you find Sekai2 useful in your research, please cite:
 
@@ -184,7 +184,7 @@ If you find Sekai2 useful in your research, please cite:
 }
 ```
 
-## License and responsible use
+## ⚖️ License and responsible use
 
 **For academic research and non-commercial use only.**
 
