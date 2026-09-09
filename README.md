@@ -7,10 +7,10 @@ cable cars—with camera trajectories and structured, temporally grounded
 language.
 
 <p align="center">
-  <a href="https://kangverse.github.io/sekai2-project/">Project Page</a> ·
-  <a href="https://arxiv.org/abs/2608.09449">Paper</a> ·
-  <a href="https://huggingface.co/datasets/Kangverse/Sekai2_Real_World">Perspective Data & Annotations</a> ·
-  <a href="https://www.modelscope.ai/datasets/kangverse/Sekai2_Panoramics/files">Panoramic Data</a>
+  🌐 <a href="https://kangverse.github.io/sekai2-project/">Project Page</a> ·
+  📄 <a href="https://arxiv.org/abs/2608.09449">Paper</a> ·
+  🤗 <a href="https://huggingface.co/datasets/Kangverse/Sekai2_Real_World">Perspective Data & Annotations</a> ·
+  🎥 <a href="https://www.modelscope.ai/datasets/kangverse/Sekai2_Panoramics/files">Panoramic Data</a>
 </p>
 
 ## 📰 News
